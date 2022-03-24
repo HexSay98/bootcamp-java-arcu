@@ -36,7 +36,7 @@ public class TematikMain {
 		if(miBuscador.hayResultados()) {
 			for(int i = 0; i < miBuscador.articulos.length; i++) {
 				if(i%2 != 0) {
-					
+					carrito.
 				}
 			}
 		}
