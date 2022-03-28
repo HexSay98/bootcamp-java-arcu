@@ -34,9 +34,9 @@ public class TematikMain {
 		//ahora agrego los articulos impares al carrito
 		
 		if(miBuscador.hayResultados()) {
-			for(int i = 0; i < miBuscador.articulos.length; i++) {
+			for(int i = 0; i < miBuscador.getCantidadArticulos(); i++) {
 				if(i%2 != 0) {
-					carrito.
+					//carrito.
 				}
 			}
 		}

@@ -15,10 +15,6 @@ public class PisosMain {
 		
 		int tamanio = tecaldo.nextInt();
 		
-		
-		
-		
-		
 		//contruyo el edificio
 		String[] edificio = new String[tamanio];
 		

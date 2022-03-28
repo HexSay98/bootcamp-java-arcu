@@ -5,9 +5,9 @@ public class Buscador {
 	
 	
 	//atributos
-	String claveBusqueda;
-	Articulo[] articulos;
-	Integer cantidad;
+	private String claveBusqueda;
+	private Articulo[] articulos;
+	private Integer cantidad;
 	
 	
 	//constructor
@@ -48,15 +48,15 @@ public class Buscador {
 		System.out.println("Hemos encontrados " + this.cantidad + " resultados para " + this.claveBusqueda);
 	}
 	
-	void detalle() {
+	public void detalle() {
 		for(int i = 0;i<this.cantidad;i++ ) {
 			//me quedo con el articulo en la posicion i
 			Articulo aux = this.articulos[i];
-			System.out.println(aux.nombre);
-			System.out.println(aux.autor);
+			System.out.println(aux.getNombre());
+			System.out.println(aux.getAutor());
 			//solo mostrar la img si tiene una como hago?
 			if(aux.tieneImagen()) {
-			System.out.println(aux.urlImagen);
+			System.out.println(aux.getUrlImagen());
 			}else {
 				System.out.println("no tiene, muestro marca de agua");
 			}
@@ -68,7 +68,13 @@ public class Buscador {
 		return this.cantidad > 0;
 	}
 	
-	
+	public int getCantidadArticulos() {
+		int cantidad = 0;
+		if(this.articulos != null) {
+			this.cantidad = this.articulos.length;
+		}
+		return cantidad;
+	}
 	
 	
 	
