@@ -1,5 +1,9 @@
 package clase7;
 
+import clase10.Libro;
+import clase10.Musica;
+import clase10.Pasatiempo;
+
 public class Buscador {
 	
 	
@@ -13,16 +17,14 @@ public class Buscador {
 	//constructor
 	public Buscador() {
 		claveBusqueda = "";
-		articulos = new Articulo[0];
+		articulos = new Articulo[0];//vector vacio
 		cantidad = 0;
 	}
 	
 	public Buscador(String claveBusqueda) {
 		//this
 		this.claveBusqueda = claveBusqueda;
-		
-		
-		
+		articulos = new Articulo[0];//vector vacio
 	}
 	
 	
@@ -31,11 +33,12 @@ public class Buscador {
 	public void buscar(){
 		//alguien me da los articulos
 		Articulo[] resultados = new Articulo[3];
-		resultados[0] = new Articulo(1l,"batman contra las feministas", "mark miller", 1540.9d, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg");
+		resultados[0] = new Libro(1l,"batman contra las feministas", "mark miller", 1540.9d, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg","laureano");
+		String[] temas = {"tema1", "tema2", "rock in roul"};
+		resultados[1] = new Musica(2l,"batman tocador", "paul bntz", 500.3D, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg",temas);
+		((Musica)resultados[1]).agregarTemas("tema 3");
 		
-		resultados[1] = new Articulo(2l,"batman tocador", "paul bntz", 500.3D, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg");
-		
-		resultados[2] = new Articulo(3l,"batman enfiestado", "paul bntz", 500.3D, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg");
+		resultados[2] = new Pasatiempo(3l,"batman enfiestado", "paul bntz", 500.3D, "https://pbs.twimg.com/profile_images/815376849668861952/iynHInHo_400x400.jpg", "hasbro");
 		
 		this.articulos = resultados;
 		
@@ -52,14 +55,8 @@ public class Buscador {
 		for(int i = 0;i<this.cantidad;i++ ) {
 			//me quedo con el articulo en la posicion i
 			Articulo aux = this.articulos[i];
-			System.out.println(aux.getNombre());
-			System.out.println(aux.getAutor());
-			//solo mostrar la img si tiene una como hago?
-			if(aux.tieneImagen()) {
-			System.out.println(aux.getUrlImagen());
-			}else {
-				System.out.println("no tiene, muestro marca de agua");
-			}
+			aux.detalle();
+			System.out.println("---------------");
 		}
 	}
 
@@ -74,6 +71,10 @@ public class Buscador {
 			this.cantidad = this.articulos.length;
 		}
 		return cantidad;
+	}
+
+	public Articulo[] getResultados() {
+		return this.articulos;
 	}
 	
 	

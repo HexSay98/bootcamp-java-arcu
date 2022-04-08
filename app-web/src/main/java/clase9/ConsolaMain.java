@@ -18,7 +18,7 @@ public class ConsolaMain {
 		System.out.println(play instanceof Consola);
 		
 		
-		
+		System.out.println(c.marca);
 		
 	}
 

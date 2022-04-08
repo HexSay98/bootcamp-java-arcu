@@ -41,7 +41,7 @@ public class TematikMain {
 			}
 		}
 		
-		
+		System.out.println(carrito.toString());
 		
 	}
 

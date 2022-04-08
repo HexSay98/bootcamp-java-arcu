@@ -3,7 +3,7 @@ package clase9;
 import java.util.Scanner;
 
 import clase7.Buscador;
-import clase7.Carrito;
+//import clase7.Carrito;
 
 public class TematikMain {
 

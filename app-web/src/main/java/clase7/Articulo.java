@@ -1,6 +1,6 @@
 package clase7;
 
-public class Articulo {
+public abstract class Articulo {
 	
 	private Long id;
 	private String nombre;
@@ -77,6 +77,23 @@ public class Articulo {
 		}
 	}
 	
+	public final void detalle() {
+		//el padre siempre ahce lo suyo
+		System.out.println(this.getNombre());
+		System.out.println(this.getAutor());
+		//solo mostrar la img si tiene una como hago?
+		if(this.tieneImagen()) {
+		System.out.println(this.getUrlImagen());
+		}else {
+			System.out.println("no tiene, muestro marca de agua");
+		}
+		//ahora el hijo hace su parte
+		this.detalleHijo();
+		
+		
+	}
 	
+	//si una clase tiene al menos un metodo abstracto, se declaran como abstracta
+	public abstract void detalleHijo();
 	
 }

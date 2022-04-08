@@ -18,4 +18,12 @@ public class PlayStation extends Consola {
 		this.codigoPlayNetwork = codigoPlayNetwork;
 
 	}
+	
+	
+	
+	public String getCod() {
+		return codigoPlayNetwork;
+	}
+	
+	
 }
