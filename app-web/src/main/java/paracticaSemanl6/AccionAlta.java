@@ -8,7 +8,12 @@ public class AccionAlta implements IAccion {
 	public void exec(Articulo ctx) {
 
 		//usa la base de datos en memoria
-		InMemoryDB.save(ctx.getId(), ctx);
+		try {
+			InMemoryDB.save(ctx.getId(), ctx);
+		} catch (MemoryException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
